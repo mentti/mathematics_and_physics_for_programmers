@@ -40,15 +40,13 @@ def convertBase(variable, base1 = '10', base2 = '10'):
     def innerConvert(tenth, base):
         vals = []
         while tenth > base:
-            rem = tenth % base
+            rem = int(tenth) % base
             vals.insert(0, rem)
-            tenth = tenth // base
+            tenth = tenth / base
         vals.insert(0, tenth)
         return vals
 
-
     result = innerConvert(tenth, b2)
-
 
     # convert to letters
     lenlst2 = len(result)
@@ -59,5 +57,3 @@ def convertBase(variable, base1 = '10', base2 = '10'):
     return ''.join(result)
 
 print(convertBase(variable,base1,base2))
-
-
